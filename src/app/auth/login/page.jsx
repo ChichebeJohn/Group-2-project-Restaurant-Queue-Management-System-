@@ -1,27 +1,15 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import styles from "../Auth.module.css";
-import { Pinyon_Script } from "next/font/google";
-
-const pinyonScript = Pinyon_Script({
-  weight: "400",
-  subsets: ["latin"],
-});
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    const savedEmail = localStorage.getItem("rememberedEmail");
-    if (savedEmail) {
-      setEmail(savedEmail);
-      setRememberMe(true);
-    }
-  }, []);
+  const router = useRouter();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -36,24 +24,27 @@ export default function Login() {
     const data = await res.json();
     if (!res.ok) return setError(data.error);
 
+    // Store user info in sessionStorage
+    sessionStorage.setItem("user", JSON.stringify(data.user));
+
     if (rememberMe) localStorage.setItem("rememberedEmail", email);
     else localStorage.removeItem("rememberedEmail");
 
-    alert("Login successful!");
+    router.push("/menu"); // Redirect to menu page
   };
 
   return (
     <div className={styles.authWrapper}>
       <div className={styles.authContainer}>
-        <h1 className={`${styles.businessName} ${pinyonScript.className}`}>Highway Bistro</h1>
+        <h1 className={styles.businessName}>Highway Bistro</h1>
         <h2>Login</h2>
-        <p className={styles.text}>Sign in to view menu</p>
+        <p className={styles.text}>Sign in to view the menu</p>
         {error && <p className={styles.error}>{error}</p>}
         <form className={styles.authForm} onSubmit={handleLogin}>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
           <label className={styles.rememberMe}>
-            <input type="checkbox" checked={rememberMe} onChange={() => setRememberMe(!rememberMe)} className={styles.rememberMe} />
+            <input type="checkbox" checked={rememberMe} onChange={() => setRememberMe(!rememberMe)} />
             Remember me
           </label>
           <button type="submit">Sign in</button>

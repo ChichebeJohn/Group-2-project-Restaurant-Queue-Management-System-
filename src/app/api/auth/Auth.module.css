@@ -1,0 +1,90 @@
+.authWrapper{
+  
+  padding: 5%;
+  background-image: url('/auth-background.png');
+  background-color: #FCBA03;
+  height: 100%;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.authContainer {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #fff;
+  /* height: 800px;
+  width: 600px; */
+  border-radius: 10px;
+  
+ 
+}
+
+.businessName{
+  color: #FF0000;
+  margin-bottom: 10px;
+}
+
+.text{
+  font-size: 0.95rem;
+  color: #B5B1A6;
+  margin-bottom: 2.2rem;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 10px;
+}
+
+.authForm input{
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border 0.3s ease;
+  margin-bottom: 20px;
+  height: 45px;
+}
+.authForm input:focus{
+  border-color:#FCBA03;
+}
+.authForm button{
+  background-color: #FCBA03;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 1px solid black;
+  width: 250px;
+  height: 50px;
+  /* justify-self: center; */
+  align-self: center;
+}
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adds spacing between checkbox and label */
+  font-size: 0.95rem;
+  color: #444;
+  cursor: pointer;
+}
+
+.rememberMe input {
+  width: 16px;
+  height: 16px;
+  accent-color: #0070f3; /* Custom checkbox color */
+  cursor: pointer;
+}
+
+.rememberMe label {
+  cursor: pointer;
+}

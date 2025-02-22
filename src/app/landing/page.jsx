@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Pinyon_Script } from "next/font/google";
 import styles from "./landing.module.css";
+import { Pinyon_Script } from "next/font/google";
+
 
 const pinyonScript = Pinyon_Script({
   weight: "400", // or the desired weight
