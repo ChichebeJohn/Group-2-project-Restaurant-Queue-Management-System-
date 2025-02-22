@@ -1,0 +1,10 @@
+.menuContainer {
+  padding: 2rem;
+}
+
+.menuList {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Additional menu-specific styles */

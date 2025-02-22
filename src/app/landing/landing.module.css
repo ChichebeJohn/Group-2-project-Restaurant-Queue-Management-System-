@@ -1,0 +1,93 @@
+/* Landing Module CSS */
+
+/* Welcome Section */
+.welcome {
+  background-color: #FCB900;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  width: auto;
+  max-height: 599px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Business Name */
+.businessName {
+  
+  /* color: #FF0000; */
+  font-weight: 700;
+  font-size: 64px;
+  text-align: left;
+  padding-right: 300px;
+}
+
+/* Login Button */
+.loginBtn {
+  width: 95px;
+  height: 61px;
+  color: #fff;
+  background-color: #0F120C;
+  margin-top: 50px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+/* Description Parent */
+.descriptionParent {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Targeting the chef image inside the descriptionParent */
+.descriptionParent .chef {
+  margin-top: -235px;
+  margin-right: -50px;
+}
+
+/* Description Container */
+.descriptionContainer {
+  text-align: left;
+  margin-right: -150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.descriptionContainer h1 {
+  font-size: 48px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.descriptionContainer p {
+  font-size: 24px;
+  color: #0D0C0C;
+  margin-bottom: 60px;
+}
+
+/* Order Button */
+.orderBtn {
+  width: 155px;
+  height: 61px;
+  color: #fff;
+  background-color: #0F120C;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+/* Gradient Image */
+.gradientImage {
+  padding-bottom: 50px;
+  margin-top: -70px;
+  overflow: hidden;
+}
+
+/* Container for the main body (if needed) */
+.container {
+  padding: 2rem;
+}
+
+/* Chef image default styling (if you need extra styling) */
+/* .chef {
+  margin-left: 90px;
+} */
