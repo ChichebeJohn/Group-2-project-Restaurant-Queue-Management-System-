@@ -1,5 +1,6 @@
 .searchContainer {
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .searchInput {
@@ -10,3 +11,24 @@
 }
 
 
+/* .Icon {
+  width: 16px;
+  height: 17px;
+  margin-left: -715px;
+  justify-self: center;
+  top: 10px;
+} */
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* if you want the icon to be non-interactive */
+  width: 16px;
+  height: 17px;
+}
+
+.searchInput {
+  padding-left: 40px; /* leave enough space for the icon */
+}

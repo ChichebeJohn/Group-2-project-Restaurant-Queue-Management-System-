@@ -8,14 +8,15 @@ export default function SearchBar({ searchQuery, setSearchQuery }) {
 
   return (
     <div className={styles.searchContainer}>
-      <input
-        type="text"
-        placeholder="Search your favorite delicacy..."
-        className={styles.searchInput}
-        value={searchQuery}
-        onChange={handleChange}
-      />
-    
-    </div>
+    <img src="/search_icon.png" alt="Search Icon" className={styles.searchIcon} />
+    <input
+      type="text"
+      placeholder="Search your favorite delicacy..."
+      className={styles.searchInput}
+      value={searchQuery}
+      onChange={handleChange}
+    />
+  </div>
+  
   );
 }

@@ -1,4 +1,58 @@
-.ordersContainer {
+.orderPageWrapper {
   padding: 2rem;
-  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.orderItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.orderItem {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.orderImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 1rem;
+  border-radius: 8px;
+}
+
+.orderDetails {
+  flex: 1;
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.quantityControls button {
+  padding: 0.3rem 0.6rem;
+  border: none;
+  background-color: #0070f3;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkoutButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #28a745;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
 }
