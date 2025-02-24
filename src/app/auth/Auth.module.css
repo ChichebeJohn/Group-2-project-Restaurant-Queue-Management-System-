@@ -88,3 +88,28 @@
 .rememberMe label {
   cursor: pointer;
 }
+
+
+/* Add this at the bottom or an appropriate place in your Auth.module.css */
+.showPasswordLabel {
+  position: absolute;
+  right: 10px;
+  top: 55%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: #444;
+}
+.showPasswordSignup {
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: #444;
+  position: absolute;
+  left:  500px;
+  top: 550px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+}
+

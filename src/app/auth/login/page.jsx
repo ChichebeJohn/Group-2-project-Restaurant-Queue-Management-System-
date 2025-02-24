@@ -9,6 +9,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
 
   const handleLogin = async (e) => {
@@ -24,8 +25,8 @@ export default function Login() {
     const data = await res.json();
     if (!res.ok) return setError(data.error);
 
-    // Store user info in sessionStorage
-    sessionStorage.setItem("user", JSON.stringify(data.user));
+    // Store user info in localStorage
+    localStorage.setItem("user", JSON.stringify(data.user));
 
     if (rememberMe) localStorage.setItem("rememberedEmail", email);
     else localStorage.removeItem("rememberedEmail");
@@ -41,15 +42,46 @@ export default function Login() {
         <p className={styles.text}>Sign in to view the menu</p>
         {error && <p className={styles.error}>{error}</p>}
         <form className={styles.authForm} onSubmit={handleLogin}>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+          />
+          <div style={{ position: "relative", marginBottom: "1rem" }}>
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required
+              style={{ width: "100%" }}
+            />
+<label className={styles.showPasswordLabel}>
+  <input
+    type="checkbox"
+    checked={showPassword}
+    onChange={() => setShowPassword(!showPassword)}
+  />{" "}
+  {/* Show */}
+</label>
+
+          </div>
           <label className={styles.rememberMe}>
-            <input type="checkbox" checked={rememberMe} onChange={() => setRememberMe(!rememberMe)} />
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={() => setRememberMe(!rememberMe)}
+            />
             Remember me
           </label>
           <button type="submit">Sign in</button>
         </form>
-        <p>Don't have an account? <Link href="/auth/signup">Create an account→ </Link></p>
+        <p>
+          Don't have an account?{" "}
+          <Link href="/auth/signup">Create an account→</Link>
+        </p>
       </div>
     </div>
   );

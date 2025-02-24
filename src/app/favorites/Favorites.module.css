@@ -1,4 +1,56 @@
-.favoritesContainer {
+.favoritesPageWrapper {
+  flex: 1;
   padding: 2rem;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
   text-align: center;
+
+}
+.favoritesPageWrapper h1 {
+  color: #fcb900;
+  margin-bottom: 2rem;
+}
+.favOrderMessage {
+  background-color: #28a745;
+  color: white;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.favoritesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.favoritesGrid button {
+  background-color: #fcb900;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.favoritesGrid button:hover {
+  background-color: #ffd900a3;
+  color: black;
+}
+
+.favMealCard {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.favMealImage {
+  width: 20%;
+  height: auto;
+  border-radius: 4px;
 }
